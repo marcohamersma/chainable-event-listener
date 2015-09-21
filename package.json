@@ -1,0 +1,37 @@
+{
+  "version": "0.0.1",
+  "description": "Wrapper around (add/remove)EventListener that supports adding multiple events at the same time, and chaining calls. Similar to jQuery's syntax.",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^1.5.0",
+    "ghooks": "^0.3.2",
+    "jasmine": "^2.3.2"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "pre-commit": "jasmine && eslint ."
+  },
+  "author": "Marco Hamersma",
+  "license": "MIT",
+  "name": "event-listener-chain",
+  "dependencies": {
+    "eslint": "^1.5.0",
+    "ghooks": "^0.3.2",
+    "jasmine": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcohamersma/event-listener-chain.git"
+  },
+  "keywords": [
+    "event",
+    "chain",
+    "addeventlistener",
+    "eventlistener",
+    "listener"
+  ],
+  "bugs": {
+    "url": "https://github.com/marcohamersma/event-listener-chain/issues"
+  },
+  "homepage": "https://github.com/marcohamersma/event-listener-chain"
+}
