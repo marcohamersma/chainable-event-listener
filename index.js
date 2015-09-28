@@ -1,5 +1,5 @@
 /* eslint no-console:0 */
-function noop() { return; }
+function noop() { return this; }
 
 module.exports = function(element) {
   if (!element || !element.addEventListener) {

@@ -31,6 +31,7 @@ describe('adding and removing listeners', function() {
   it('should not throw an error when no element passed', function() {
     expect(new eventChain(undefined).on).not.toThrow();
     expect(new eventChain('durrr').on).not.toThrow();
+    expect(new eventChain('durrr').on('click', fakeFunction).on).not.toThrow();
   });
 });
 
