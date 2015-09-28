@@ -4,7 +4,7 @@
 Wrapper around `(add/remove)EventListener` that supports adding multiple events at the same time, and chaining calls. Similar to jQuery's syntax.
 
 ## Usage
-For use in the browser, a setup with either [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/) is required.
+Currently, a setup with either [browserify](http://browserify.org/) or [webpack](http://webpack.github.io/) is required for use.
 
 ### Installation
 ```
