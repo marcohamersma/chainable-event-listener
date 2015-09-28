@@ -14,46 +14,11 @@ $ npm install --save chainable-event-listener
 ### Using the helper
 
 ```js
-var eventChain   = require('chainable-event-listener');
-var buttonEvents = eventChain(button);
+var EventChain      = require('chainable-event-listener');
+var $exampleElement = new EventChain(exampleElement);
 
-buttonEvents.on('mouseup mousedown keyup', fakeFunction)
-            .off('mousedown', fakeFunction);
+$exampleElement.on('mouseup mousedown keyup', fakeFunction)
+               .on('mousedown', anotherFunction);
 ```
 
-### OR
-
-```js
-var buttonEvents = new EventChain(button);
-
-buttonEvents.on('mouseup mousedown keyup', fakeFunction)
-            .on('mousedown', anotherFunction);
-```
-
-
-## Alternative wordings
-
-```js
-var el = eventChain(button);
-
-el.on('mouseup mousedown keyup', fakeFunction)
-  .on('mousedown', anotherFunction);
-```
-
-
-
-```js
-var _button = eventChain(button);
-
-_button.on('mouseup mousedown keyup', fakeFunction)
-       .on('mousedown', anotherFunction);
-```
-
-
-```js
-var $button = eventChain(button);
-
-$button.on('mouseup mousedown keyup', fakeFunction)
-       .on('mousedown', anotherFunction);
-```
-
+**Note:** I chose to prefix the `$exampleElement` with a `$` symbol for this example to indicate that this is not a reference to `exampleElement`, but instead it's eventChain. Of course you can name it like you want, I just named it like this because this module tries to emulate the jQuery API anyway.

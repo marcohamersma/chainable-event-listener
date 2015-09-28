@@ -1,22 +1,20 @@
 module.exports = function(element) {
-  var handlers = {
-    on: on,
-    off: off
-  };
+  var handlers = this;
+  this.element = element;
 
-  function on(listeners, useCapture, wantsUntrusted) {
+  this.on = function(listeners, useCapture, wantsUntrusted) {
     listeners.split(' ').forEach(function(listener) {
       element.addEventListener(listener, useCapture, wantsUntrusted);
     });
     return handlers;
-  }
+  };
 
-  function off(listeners, useCapture) {
+  this.off = function(listeners, useCapture) {
     listeners.split(' ').forEach(function(listener) {
       element.removeEventListener(listener, useCapture);
     });
     return handlers;
-  }
+  };
 
-  return handlers;
+  return this;
 };

@@ -16,37 +16,37 @@ function Stub() {
 
 describe('adding and removing listeners', function() {
   var stub = Stub();
-  var el = eventChain(stub);
+  var $element = new eventChain(stub);
 
   it('should add an event listener', function() {
-    el.on('mouseup', fakeFunction);
+    $element.on('mouseup', fakeFunction);
     expect(stub.events.mouseup).toEqual(fakeFunction);
   });
 
   it('should remove an event listener', function() {
-    el.off('mouseup', fakeFunction);
+    $element.off('mouseup', fakeFunction);
     expect(stub.events.mouseup).toBeUndefined();
   });
 });
 
 describe('chaining:', function() {
-  var el = eventChain(Stub());
+  var $element = new eventChain(Stub());
 
   it('should return an on and off function', function() {
-    expect(el.on).toBeTruthy();
-    expect(el.off).toBeTruthy();
+    expect($element.on).toBeTruthy();
+    expect($element.off).toBeTruthy();
   });
 
   it('After adding a handler, should return on and off function again', function() {
-    expect(el.on('click').on).toBeTruthy();
-    expect(el.off('click').off).toBeTruthy();
+    expect($element.on('click').on).toBeTruthy();
+    expect($element.off('click').off).toBeTruthy();
   });
 });
 
 describe('supplying multiple listeners', function() {
   var stub = Stub();
-  var el = eventChain(stub);
-  el.on('mouseup mousedown keyup', fakeFunction);
+  var $element = new eventChain(stub);
+  $element.on('mouseup mousedown keyup', fakeFunction);
 
   it('should add multiple listeners', function() {
     expect(stub.events.mouseup).toEqual(fakeFunction);
@@ -55,7 +55,7 @@ describe('supplying multiple listeners', function() {
   });
 
   it('should remove multiple listeners', function() {
-    el.off('keyup mousedown', fakeFunction);
+    $element.off('keyup mousedown', fakeFunction);
     expect(stub.events.mouseup).toEqual(fakeFunction);
     expect(stub.events.mousedown).toBeUndefined();
     expect(stub.events.keyup).toBeUndefined();

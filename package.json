@@ -1,5 +1,6 @@
 {
-  "version": "0.0.1",
+  "name": "chainable-event-listener",
+  "version": "1.0.0",
   "description": "Wrapper around (add/remove)EventListener that supports adding multiple events at the same time, and chaining calls. Similar to jQuery's syntax.",
   "main": "index.js",
   "devDependencies": {
@@ -13,10 +14,9 @@
   },
   "author": "Marco Hamersma",
   "license": "MIT",
-  "name": "event-listener-chain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcohamersma/event-listener-chain.git"
+    "url": "https://github.com/marcohamersma/chainable-event-listener.git"
   },
   "keywords": [
     "event",
@@ -27,7 +27,7 @@
     "listener"
   ],
   "bugs": {
-    "url": "https://github.com/marcohamersma/event-listener-chain/issues"
+    "url": "https://github.com/marcohamersma/chainable-event-listener/issues"
   },
-  "homepage": "https://github.com/marcohamersma/event-listener-chain"
+  "homepage": "https://github.com/marcohamersma/chainable-event-listener"
 }
