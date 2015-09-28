@@ -27,6 +27,11 @@ describe('adding and removing listeners', function() {
     $element.off('mouseup', fakeFunction);
     expect(stub.events.mouseup).toBeUndefined();
   });
+
+  it('should not throw an error when no element passed', function() {
+    expect(new eventChain(undefined).on).not.toThrow();
+    expect(new eventChain('durrr').on).not.toThrow();
+  });
 });
 
 describe('chaining:', function() {

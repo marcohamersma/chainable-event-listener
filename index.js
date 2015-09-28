@@ -1,6 +1,20 @@
+/* eslint no-console:0 */
+function noop() { return; }
+
 module.exports = function(element) {
   var handlers = this;
   this.element = element;
+  if (!element || !element.addEventListener) {
+    this.on = noop;
+    this.off = noop;
+
+    if (typeof console !== 'undefined') {
+      console.warn('Expected DOM element passed to chainableEventListener, got', element);
+    }
+
+    return this;
+  }
+
 
   this.on = function(listeners, useCapture, wantsUntrusted) {
     listeners.split(' ').forEach(function(listener) {
