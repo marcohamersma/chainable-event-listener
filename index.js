@@ -2,8 +2,6 @@
 function noop() { return; }
 
 module.exports = function(element) {
-  var handlers = this;
-  this.element = element;
   if (!element || !element.addEventListener) {
     this.on = noop;
     this.off = noop;
@@ -20,15 +18,16 @@ module.exports = function(element) {
     listeners.split(' ').forEach(function(listener) {
       element.addEventListener(listener, useCapture, wantsUntrusted);
     });
-    return handlers;
+    return this;
   };
 
   this.off = function(listeners, useCapture) {
     listeners.split(' ').forEach(function(listener) {
       element.removeEventListener(listener, useCapture);
     });
-    return handlers;
+    return this;
   };
 
+  this.element = element;
   return this;
 };
